@@ -4,14 +4,14 @@
 
 > 安装
 ```shell
-go install github.com/balrogsxt/ezviz-monitor@latest
+go install github.com/balrogsxt/monitor-ezviz@latest
 ```
 
 > 运行
 
 不设置环境变量的情况下
 ```shell
-monitor -key=xxxxx -secret=xxxxx -device=xxxxxx -ffplay_path=ffplay
+monitor-ezviz -key=xxxxx -secret=xxxxx -device=xxxxxx -ffplay_path=ffplay
 ```
 
-设置环境变量后可直接运行 `monitor`
+设置环境变量后可直接运行 `monitor-ezviz`
