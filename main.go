@@ -45,10 +45,7 @@ func main() {
 		"-window_title", "监控", playAddr,
 	}
 	//检测是否安装ffplay
-	c := cmd.NewCmdOptions(cmd.Options{
-		Streaming:      true,
-		LineBufferSize: cmd.DEFAULT_LINE_BUFFER_SIZE * 2,
-	}, ffplayPath, args...)
+	c := cmd.NewCmd(ffplayPath, args...)
 	status := c.Start()
 	for {
 		select {
@@ -62,6 +59,9 @@ func main() {
 			log.Println(v)
 		}
 		if c.Status().Complete {
+			break
+		}
+		if c.Status().Error != nil {
 			break
 		}
 	}
